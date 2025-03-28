@@ -19,17 +19,19 @@
 <section class="card-container">
   {% for cocktail in cocktails %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img
-            src="{% static 'images/mini-'|add:cocktail.glassware|add:'.png' %}"
-            alt="A f"{cocktail.glassware}" glass."
-          />
+      <a href="{% url 'cocktail-detail' cocktail.id %}">  
+        <div class="card-content">
+          <div class="card-img-container">
+            <img
+              src="{% static 'images/'|add:cocktail.glassware|add:'.png' %}"
+              alt="A f"{cocktail.glassware}" glass."
+            />
+          </div>
+          <h2 class="card-title">{{ cocktail.name }}</h2>
+          <p>${{ cocktail.cost }}</p>
+          <p><small>{{ cocktail.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ cocktail.name }}</h2>
-        <p>${{ cocktail.cost }}</p>
-        <p><small>{{ cocktail.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>

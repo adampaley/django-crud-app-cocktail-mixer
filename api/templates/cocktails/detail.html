@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/cocktails/cocktail-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="cocktail-container">
+  <div class="cocktail-img">
+    <img
+      src="{% static 'images/'|add:cocktail.glassware|add:'.png' %}"
+      alt="A f"{cocktail.glassware}" glass."
+    />
+  </div>
+  <div class="cocktail-details">
+    <h1>{{ cocktail.name }}</h1>
+    <h2>${{ cocktail.cost }}</h2>
+    <p>{{ cocktail.description }}</p>
+  </div>
+</section>
+{% endblock %}
