@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/cocktails/cocktail-index.css' %}"/>
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>Cocktail List</h1>
+  <img src="{% static 'images/mini-shot.png' %}" alt="A shot glass" />
+  <img src="{% static 'images/mini-highball.png' %}" alt="A highball glass" />
+  <img src="{% static 'images/mini-martini.png' %}" alt="A martini glass" />
+  <img src="{% static 'images/mini-wine.png' %}" alt="A wine glass" />
+  <img src="{% static 'images/mini-rocks.png' %}" alt="A rocks glass" />
+  <img src="{% static 'images/mini-collins.png' %}" alt="A collins glass" />
+  <img src="{% static 'images/mini-coupe.png' %}" alt="A coupe glass" />
+</section>
+
+<section class="card-container">
+  {% for cocktail in cocktails %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img
+            src="{% static 'images/mini-'|add:cocktail.glassware|add:'.png' %}"
+            alt="A f"{cocktail.glassware}" glass."
+          />
+        </div>
+        <h2 class="card-title">{{ cocktail.name }}</h2>
+        <p>${{ cocktail.cost }}</p>
+        <p><small>{{ cocktail.description }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
