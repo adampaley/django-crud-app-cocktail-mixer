@@ -15,6 +15,10 @@
     <h1>{{ cocktail.name }}</h1>
     <h2>${{ cocktail.cost }}</h2>
     <p>{{ cocktail.description }}</p>
+    <div class="cocktail-actions">
+      <a href="{% url 'cocktail-update' cocktail.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'cocktail-delete' cocktail.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 {% endblock %}
