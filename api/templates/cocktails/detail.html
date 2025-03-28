@@ -7,8 +7,8 @@
 <section class="cocktail-container">
   <div class="cocktail-img">
     <img
-      src="{% static 'images/'|add:cocktail.glassware|add:'.png' %}"
-      alt="A f"{cocktail.glassware}" glass."
+      src="{% static 'images/'|add:cocktail.get_glassware_name|add:'.png' %}"
+      alt="A f"{cocktail.get_glassware_name}" glass."
     />
   </div>
   <div class="cocktail-details">
@@ -21,4 +21,51 @@
     </div>
   </div>
 </section>
+<div class="servings-ingredients-container">
+    <section class="servings">
+      <div class="subsection-title">
+        <h2>Servings</h2>
+        <img
+          src="{% static 'images/bar-stand.png' %}"
+          alt="A bar"
+        />
+        <img src="{% static 'images/shaker.png' %}" alt="A cocktail shaker and jigger" />
+        <img
+          src="{% static 'images/stool.png' %}"
+          alt="A bar stool"
+        />
+      </div>
+      <h3>Add a Serving</h3>
+      <form action="{% url 'add-serving' cocktail.id %}" method="post" class="subsection-content" autocomplete="off">
+        {% csrf_token %}
+        {{ serving_form.as_p }}
+        <button type="submit" class="btn submit">Add Serving</button>
+      </form>
+      <h3>Past Servings</h3>
+      {% if cocktail.serving_set.all.count %}
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Serving Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for serving in cocktail.serving_set.all %}
+              <tr>
+                <td>{{serving.date}}</td>
+                <td>{{serving.get_jigger_display}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <div class="subsection-content">
+           <p>{{cocktail.name}} has not been served.</p> 
+        </div>
+      {% endif %}  
+    </section>
+  </div>
+  
+  
 {% endblock %}

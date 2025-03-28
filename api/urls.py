@@ -8,5 +8,6 @@ urlpatterns = [
     path('cocktails/<int:cocktail_id>/', views.cocktail_detail, name='cocktail-detail'),
     path('cocktails/create', views.CocktailCreate.as_view(), name='cocktail-create'),
     path('cocktails/<int:pk>/update/', views.CocktailUpdate.as_view(), name='cocktail-update'),
-    path('cocktails/<int:pk>/delete/', views.CocktailDelete.as_view(), name='cocktail-delete')
+    path('cocktails/<int:pk>/delete/', views.CocktailDelete.as_view(), name='cocktail-delete'),
+    path('cocktails/<int:cocktail_id>/add-serving/', views.add_serving, name='add-serving')
 ]

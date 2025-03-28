@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Cocktail
+from .forms import ServingForm
 
 # Create your views here.
 def home(request):
@@ -15,7 +16,10 @@ def cocktail_index(request):
 
 def cocktail_detail(request, cocktail_id):
     cocktail = Cocktail.objects.get(id=cocktail_id)
-    return render(request, 'cocktails/detail.html', {'cocktail': cocktail})
+    serving_form = ServingForm()
+    return render(request, 'cocktails/detail.html', {
+        'cocktail': cocktail, 'serving_form': serving_form
+    })
 
 class CocktailCreate(CreateView):
     model = Cocktail
@@ -28,3 +32,11 @@ class CocktailUpdate(UpdateView):
 class CocktailDelete(DeleteView):
     model = Cocktail
     success_url = '/cocktails/'
+
+def add_serving(request, cocktail_id):
+    form = ServingForm(request.POST)
+    if form.is_valid():
+        new_serving = form.save(commit=False)
+        new_serving.cocktail_id = cocktail_id
+        new_serving.save()
+    return redirect('cocktail-detail', cocktail_id=cocktail_id)

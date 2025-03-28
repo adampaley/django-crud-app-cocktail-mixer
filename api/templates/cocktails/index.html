@@ -23,8 +23,8 @@
         <div class="card-content">
           <div class="card-img-container">
             <img
-              src="{% static 'images/'|add:cocktail.glassware|add:'.png' %}"
-              alt="A f"{cocktail.glassware}" glass."
+              src="{% static 'images/'|add:cocktail.get_glassware_name|add:'.png' %}"
+              alt="A f"{cocktail.get_glassware_name}" glass."
             />
           </div>
           <h2 class="card-title">{{ cocktail.name }}</h2>

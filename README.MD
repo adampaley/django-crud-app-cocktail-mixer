@@ -17,3 +17,9 @@ https://www.svgrepo.com/svg/44422/cocktail
 <a target="_blank" href="https://icons8.com/icon/irHs4xLjSENV/collins-glass">Collins Glass</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 <a target="_blank" href="https://icons8.com/icon/A2GwDc2cLdPD/bar-counter">Bar Counter</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/EEfdXKCYidPb/bar">Bar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/svGuyocRyHrw/shaker">Shaker</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/vlUgUrgwnEEE/stool">Stool</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
