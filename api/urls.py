@@ -14,5 +14,7 @@ urlpatterns = [
     path('ingredients/<int:pk>/', views.IngredientDetail.as_view(), name='ingredient-detail'),
     path('ingredients/', views.IngredientList.as_view(), name='ingredient-index'),
     path('ingredients/<int:pk>/update/', views.IngredientUpdate.as_view(), name='ingredient-update'),
-    path('ingredients/<int:pk>/delete/', views.IngredientDelete.as_view(), name='ingredient-delete')
+    path('ingredients/<int:pk>/delete/', views.IngredientDelete.as_view(), name='ingredient-delete'),
+    path('ingredients/<int:cocktail_id>/associate-ingredient/<int:ingredient_id>', views.associate_ingredient, name="associate-ingredient"),
+    path('ingredients/<int:cocktail_id>/remove-ingredient/<int:ingredient_id>', views.remove_ingredient, name="remove-ingredient")
 ]

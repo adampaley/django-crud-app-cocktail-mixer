@@ -65,6 +65,63 @@
         </div>
       {% endif %}  
     </section>
+    <section class="ingredients">
+        <div class="subsection-title">
+          <h2>Ingredients</h2>
+          <img src="{% static 'images/mini-alcohol.png' %}" alt="A bottle of alcohol" />
+          <img src="{% static 'images/mini-liqueur.png' %}" alt="A bottle of liqueur" />
+          <img src="{% static 'images/mini-ice-bucket.png' %}" alt="A bucket of ice" />
+          <img src="{% static 'images/mini-garnish.png' %}" alt="A garnish" />
+          <img src="{% static 'images/mini-mixer.png' %}" alt="A can of mixer" />
+          <img src="{% static 'images/mini-flavoring.png' %}" alt="A container of additional flavoring" />
+        </div>
+        <h3>{{ cocktail.name }}'s Ingredients</h3>
+        <div class="subsection-content">
+          {% if cocktail.ingredients.count %} 
+            {% for ingredient in cocktail.ingredients.all %}
+              <div class="ingredient-container">
+                <img
+                  src="{% static 'images/'|add:ingredient.get_categorization|add:'.png' %}"
+                  alt="A container of f"{ingredient.get_categorization}"."
+                  class="ingredient-img" 
+                />
+                <a href="{% url 'ingredient-detail' ingredient.id %}">
+                  <p>{{ ingredient.name }}</p>
+                </a>
+                <form action="{% url 'remove-ingredient' cocktail.id ingredient.id %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger">Remove Ingredient</button>  
+                </form>
+              </div>
+            {% endfor %} 
+          {% else %}
+            <p class="no-ingredient">{{cocktail.name}} doesn't have ingredients listed!</p>
+          {% endif %}
+        </div>
+        <h3>Available Ingredients</h3>
+        <div class="subsection-content">
+          {% if ingredients.count %}  
+            {% for ingredient in ingredients.all %}
+              <div class="ingredient-container">
+                <img
+                  src="{% static 'images/'|add:ingredient.get_categorization|add:'.png' %}"
+                  alt="A container of f"{ingredient.get_categorization}"."
+                  class="ingredient-img" 
+                />
+                <a href="{% url 'ingredient-detail' ingredient.id %}">
+                  <p>{{ ingredient.name }}</p>
+                </a>  
+                <form action="{% url 'associate-ingredient' cocktail.id ingredient.id %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="btn submit">Add Ingredient</button>
+                </form>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="all-ingredients">No available ingredients.</p>
+          {% endif %}    
+        </div>
+      </section>
   </div>
   
   

@@ -164,6 +164,7 @@
   
 .ingredient-container p {
     margin: 12px 0;
+    display: inline-block;
 }
   
 .ingredient-container a {
@@ -176,6 +177,14 @@
     margin-left: 10px;
 }
   
+.ingredient-img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 5px; 
+    margin-top: 10px;
+}
+
 #file-input {
     overflow: hidden;
     position: absolute;

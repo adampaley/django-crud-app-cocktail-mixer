@@ -24,7 +24,7 @@
           <h2>{{ ingredient.name }}</h2>
           <img
             src="{% static 'images/'|add:ingredient.get_categorization|add:'.png' %}"
-            alt="A f"{ingredient.get_categorization}" glass."
+            alt="A container of f"{ingredient.get_categorization}"."
           />
           {% if ingredient.get_categorization == 'Ice' %}
             <p>{{ingredient.get_categorization}} by the bucketful.</p>
