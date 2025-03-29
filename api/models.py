@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -50,6 +51,7 @@ class Cocktail(models.Model):
         default=GLASS_TYPES[1][0]
     )
     ingredients = models.ManyToManyField(Ingredient)
+    submitted_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
