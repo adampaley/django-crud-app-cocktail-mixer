@@ -9,5 +9,10 @@ urlpatterns = [
     path('cocktails/create', views.CocktailCreate.as_view(), name='cocktail-create'),
     path('cocktails/<int:pk>/update/', views.CocktailUpdate.as_view(), name='cocktail-update'),
     path('cocktails/<int:pk>/delete/', views.CocktailDelete.as_view(), name='cocktail-delete'),
-    path('cocktails/<int:cocktail_id>/add-serving/', views.add_serving, name='add-serving')
+    path('cocktails/<int:cocktail_id>/add-serving/', views.add_serving, name='add-serving'),
+    path('ingredients/create/', views.IngredientCreate.as_view(), name='ingredient-create'),
+    path('ingredients/<int:pk>/', views.IngredientDetail.as_view(), name='ingredient-detail'),
+    path('ingredients/', views.IngredientList.as_view(), name='ingredient-index'),
+    path('ingredients/<int:pk>/update/', views.IngredientUpdate.as_view(), name='ingredient-update'),
+    path('ingredients/<int:pk>/delete/', views.IngredientDelete.as_view(), name='ingredient-delete')
 ]

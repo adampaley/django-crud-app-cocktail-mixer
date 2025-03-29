@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Cocktail
+from django.views.generic import ListView, DetailView
+from .models import Cocktail, Ingredient
 from .forms import ServingForm
 
 # Create your views here.
@@ -40,3 +41,21 @@ def add_serving(request, cocktail_id):
         new_serving.cocktail_id = cocktail_id
         new_serving.save()
     return redirect('cocktail-detail', cocktail_id=cocktail_id)
+
+class IngredientCreate(CreateView):
+    model = Ingredient
+    fields = '__all__'
+
+class IngredientList(ListView):
+    model = Ingredient
+
+class IngredientDetail(DetailView):
+    model = Ingredient
+
+class IngredientUpdate(UpdateView):
+    model = Ingredient
+    fields = '__all__'
+
+class IngredientDelete(DeleteView):
+    model = Ingredient
+    success_url = '/ingredients/'

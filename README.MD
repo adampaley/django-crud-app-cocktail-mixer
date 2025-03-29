@@ -23,3 +23,15 @@ https://www.svgrepo.com/svg/44422/cocktail
 <a target="_blank" href="https://icons8.com/icon/svGuyocRyHrw/shaker">Shaker</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 <a target="_blank" href="https://icons8.com/icon/vlUgUrgwnEEE/stool">Stool</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/RPBMHDHME3ya/ice-bucket">Ice Bucket</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/ZmEO0iBdihG3/mint-leaf">Mint Leaf</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/wbzdK50I2qX8/soda">Soda</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/G8jEs3RQJIp4/liquor">Liquor</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/OLHvxjbmGE8e/dark-chocolate-liqueur">Dark Chocolate Liqueur</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/p2LqeSyKyGtK/salt-shaker">Salt Shaker</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

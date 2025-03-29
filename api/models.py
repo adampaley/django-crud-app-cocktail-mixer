@@ -52,3 +52,31 @@ class Serving(models.Model):
     
     class Meta:
         ordering = ['-date']
+
+COCKTAIL_COMPONENTS = (
+    ('A', 'Alcohol'),
+    ('L', 'Liqueur'),
+    ('M', 'Mixer'),
+    ('G', 'Garnish'),
+    ('I', 'Ice'),
+    ('F', 'Flavoring')
+)
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=50)
+    categorization = models.CharField(
+        max_length=1,
+        choices=COCKTAIL_COMPONENTS,
+        default=COCKTAIL_COMPONENTS[0][0]
+    )
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse("ingredient-detail", kwargs={"pk": self.id})
+    
+    def get_categorization(self):
+        categorization_map = dict(COCKTAIL_COMPONENTS)
+        return categorization_map.get(self.categorization, "Default")
+    

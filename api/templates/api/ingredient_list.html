@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/ingredients/ingredient-index.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>All Ingredients</h1>
+  <img src="{% static 'images/mini-alcohol.png' %}" alt="A bottle of alcohol" />
+  <img src="{% static 'images/mini-liqueur.png' %}" alt="A bottle of liqueur" />
+  <img src="{% static 'images/mini-ice-bucket.png' %}" alt="A bucket of ice" />
+  <img src="{% static 'images/mini-garnish.png' %}" alt="A garnish" />
+  <img src="{% static 'images/mini-mixer.png' %}" alt="A can of mixer" />
+  <img src="{% static 'images/mini-flavoring.png' %}" alt="A container of additional flavoring" />
+</section>
+
+<section class="card-container">
+  {% for ingredient in ingredient_list %}
+    <div class="card" style="border-color: #F0F8FE">
+      <div class="card-bg" style="background-color: #F0F8FE"></div>
+      <a href="{% url 'ingredient-detail' ingredient.id %}">
+        <div class="card-content">
+          <h2>{{ ingredient.name }}</h2>
+          <img
+            src="{% static 'images/'|add:ingredient.get_categorization|add:'.png' %}"
+            alt="A f"{ingredient.get_categorization}" glass."
+          />
+          {% if ingredient.get_categorization == 'Ice' %}
+            <p>{{ingredient.get_categorization}} by the bucketful.</p>
+          {% else %}
+            <p>A type of {{ingredient.get_categorization|lower}}.</p>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
