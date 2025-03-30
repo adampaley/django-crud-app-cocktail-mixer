@@ -27,7 +27,7 @@ body {
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
     min-height: 100vh;
-    --nav-bg: rgba(66, 229, 190, 0.7);
+    --nav-bg: rgba(66, 229, 190, 0.9);
     --nav-bg-ff: rgba(66, 229, 190, 0.9);
     --borders: rgb(36, 116, 248) solid 2px;
     --text-color: rgb(17, 20, 17);
@@ -98,6 +98,10 @@ nav li {
     margin: auto;
     padding: 10px 20px 0;
     max-width: 500px;
+}
+
+.logo {
+    width: 100%;
 }
   
 .page-header {
@@ -213,7 +217,7 @@ nav li {
     }
   
     .header-logo-container {
-      width: 213px;
+      width: 200px;
     }
   
     .page-header h1 {

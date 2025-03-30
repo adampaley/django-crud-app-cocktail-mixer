@@ -35,15 +35,17 @@
     <section class="servings">
       <div class="subsection-title">
         <h2>Servings</h2>
-        <img
-          src="{% static 'images/bar-stand.png' %}"
-          alt="A bar"
-        />
-        <img src="{% static 'images/shaker.png' %}" alt="A cocktail shaker and jigger" />
-        <img
-          src="{% static 'images/stool.png' %}"
-          alt="A bar stool"
-        />
+        <div class="subsection-imgs">
+          <img
+            src="{% static 'images/bar-stand.png' %}"
+            alt="A bar"
+          />
+          <img src="{% static 'images/shaker.png' %}" alt="A cocktail shaker and jigger" />
+          <img
+            src="{% static 'images/stool.png' %}"
+            alt="A bar stool"
+          />
+        </div>  
       </div>
       <h3>Add a Serving</h3>
       <form action="{% url 'add-serving' cocktail.id %}" method="post" class="subsection-content" autocomplete="off">
@@ -78,12 +80,14 @@
     <section class="ingredients">
         <div class="subsection-title">
           <h2>Ingredients</h2>
-          <img src="{% static 'images/mini-alcohol.png' %}" alt="A bottle of alcohol" />
-          <img src="{% static 'images/mini-liqueur.png' %}" alt="A bottle of liqueur" />
-          <img src="{% static 'images/mini-ice-bucket.png' %}" alt="A bucket of ice" />
-          <img src="{% static 'images/mini-garnish.png' %}" alt="A garnish" />
-          <img src="{% static 'images/mini-mixer.png' %}" alt="A can of mixer" />
-          <img src="{% static 'images/mini-flavoring.png' %}" alt="A container of additional flavoring" />
+          <div class="subsection-imgs">
+            <img src="{% static 'images/mini-alcohol.png' %}" alt="A bottle of alcohol" />
+            <img src="{% static 'images/mini-liqueur.png' %}" alt="A bottle of liqueur" />
+            <img src="{% static 'images/mini-ice-bucket.png' %}" alt="A bucket of ice" />
+            <img src="{% static 'images/mini-garnish.png' %}" alt="A garnish" />
+            <img src="{% static 'images/mini-mixer.png' %}" alt="A can of mixer" />
+            <img src="{% static 'images/mini-flavoring.png' %}" alt="A container of additional flavoring" />
+          </div>
         </div>
         <h3>{{ cocktail.name }}'s Ingredients</h3>
         <div class="subsection-content">

@@ -33,7 +33,9 @@
   
 .subsection-title {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 5px;
     margin-bottom: 12px;
 }
   
