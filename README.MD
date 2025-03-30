@@ -12,6 +12,9 @@ This repository contains the MVT code for **Cocktail Mixer**, a Python, Django, 
     * Ingredient pages: Users can add (`CREATE`), view (`READ`), edit (`UPDATE`), and remove (`DELETE`) any ingredient, as well as assign categorization for their use. All ingredients created are viewable by any signed in user.
 * User data persists after sign-out.
 
+
+[**Deployed App**](https://cocktail-mixer-08642dd7b133.herokuapp.com/)
+
 ## Attributions
 * [Cocktail](https://www.svgrepo.com/svg/143361/cocktail) icon by [svgrepo](https://www.svgrepo.com/)
 * [Cocktail](https://www.svgrepo.com/svg/44422/cocktail) icon by [svgrepo](https://www.svgrepo.com/)
